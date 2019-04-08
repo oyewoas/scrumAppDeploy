@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="navbar-fixed">
+      <nav class="purple darken-4">
+        <div class="nav-wrapper">
+          <a routerLink="/home" routerLinkActive="active" class="brand-logo">Scrumy App</a>
+          <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a (click)="logout()" class="nav-btn btn" routerLinkActive="active">Log Out</a></li>
+          </ul>
+        </div>
+      </nav>
+  
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+    </div>
+</div>
+<div class="container-fluid content">
+  <div class="row">
+    <div class="col s12 center">
+      <h4 class="headin-4">{{dataservice.message}}</h4>
+  
+      <p class="para">Username: <i class="italic"> {{dataservice.username}} </i> <br> Role: <i class="italic">{{dataservice.roles}}</i> </p>
+    </div>
+  </div>
+  <div class="row">
+    
+    <div class="col l12 s12 m12">
+     <div class="table">
+       <div class="table-row">
+         <th colspan="6" class="full-box">Available Tasks</th>
+       </div>
+       <div class="table-row">
+          <th class="full-box"> User</th>
+          <th class="full-box">Weekly Goal</th>
+          <th class="full-box">Daily Goal</th>
+          <th class="full-box">Verify Goal</th>
+          <th class="full-box">Done Goal</th>
+          <th class="full-box">Remove Goal</th>
+        
+     </div>
+     <ng-container *ngFor="let user of dataservice.users">
+       <div *ngIf="user.scrumygoals_set.length == 0" class="table-row" dragula="mainTable" [attr.id]="'u' + user.id">
+          <td class="full-box" id="author" colspan="6">{{user.nickname}} - NO TASK FOR THIS USER</td>
+       </div>
+       <div class="table-row" *ngFor="let goal of user.scrumygoals_set; let j = index; let k= count" dragula="mainTable" [attr.id]= "goal.goal_id">
+         <td *ngIf="j == 0" colspan="1" [attr.rowspan]="k" class="full-box" id="user">{{user.nickname}}</td>
+         <div colspan="1" *ngFor="let arrItem of arrCount" [ngClass]="j == 0 ? 'top-box' : 'reg-box'" [innerText]="goal.goal_status == arrItem ? goal.goal_id + ') ' + goal.goal_name: '-----'" [attr.id]="goal.goal_status == arrItem ? arrItem : 'blank'"
+         (click) = "goal.goal_status == arrItem ? editGoal($event) : doNothing()"></div>
+         <div colspan="1" [ngClass] = "j == 0 ? 'top-box' : 'reg-box'" id="remove" >-----</div>
+
+       </div>
+     </ng-container>
+    </div> 
+     
+
+  </div>
+  <div class="row">
+    <div class="col s12 l4 m3"></div>
+    <div class="col s12 l4 m6 center">
+        <form (ngSubmit)="addGoal()" class="addgoal-form">
+            <label> <h4 class="headin-4">Add Task</h4> </label>
+            <textarea rows="4" cols="35"  class="add-btn" id="goalname" name="goalname" [ngModelOptions]="{standalone: true}" [(ngModel)]="dataservice.goal_name" placeholder="Add Your Goal" class="input-field validate"></textarea>
+        <button class="add-btn" >Add Task</button>
+
+        </form>
+    </div>
+    <div class="col s12 l4 m4"></div>
+  </div>
+  <footer>
+      <div class="row footer">
+          <div class="col s12 center">
+              <p class="footer-paragraph">&copy; 2019 Scrumy App built by Ayooluwa Oyewo</p>
+          </div>
+      </div>
+  </footer>
+</div>
+  
+  
+
+  
+
+

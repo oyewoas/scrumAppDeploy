@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <div class="navbar-fixed">
+        <nav class="purple darken-4">
+          <div class="nav-wrapper">
+            <a routerLink="/home" routerLinkActive="active" class="brand-logo">Scrumy App</a>
+            <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a routerLink="/home" routerLinkActive="active">HOME</a></li>
+              <li><a routerLink="/home" routerLinkActive="active">ABOUT</a></li>
+              <li><a routerLink="/home" routerLinkActive="active">CONTACT US</a></li>
+              <li><a (click)="logIn()" class="nav-btn btn" routerLinkActive="active">Log In</a></li>
+            </ul>
+          </div>
+        </nav>
+    
+        <ul class="sidenav" id="mobile-demo">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">Javascript</a></li>
+          <li><a href="mobile.html">Mobile</a></li>
+        </ul>
+      </div>
+</div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col l3 m3 s12"></div>
+      <div class="col l6 m6 s12 form">
+      <form class="" (ngSubmit)="createUser()" #myform="ngForm">
+          <div class="center">
+              <span>{{dataservice.message}}</span>
+              <h4 class="heading-4">Create Account</h4>
+              </div>
+        <div class="row">
+          <div class="col s12">
+            <label for="username">Username</label>
+            <input id="signupusername"   name="signupusername"  [(ngModel)]="dataservice.signupusername" placeholder="Username" type="text"  class="input-field validate">  
+          </div>
+          <div class=" col s12">
+            <label for="password">Password</label>
+            <input id="signuppassword" name="signuppwd" [ngModelOptions]="{standalone: true}" [(ngModel)]="dataservice.signuppwd" placeholder="Password" type="password" class="input-field validate">
+          </div>
+          <div class=" col s12">
+            <label for="comfirm-password">Comfirm-Password</label>
+            <input id="comfirm-password" name="signupconfpwd" [ngModelOptions]="{standalone: true}" [(ngModel)]="dataservice.signupconfpwd" placeholder="Comfirm Password" type="password" class="input-field validate">
+          </div>
+          <div class=" col s12">
+            <label for="fullname">Full Name</label>
+            <input id="fullname" type="text" name="fullname" [ngModelOptions]="{standalone: true}" [(ngModel)]="dataservice.fullname" placeholder="Firstname Lastname"  class="input-field validate">
+          </div>
+          <div class=" col s12">
+              <label>User-type <i>(Choose your option)</i></label>
+              <select class="input-field browser-default" name="role" [ngModelOptions]="{standalone: true}" [(ngModel)]="dataservice.role">
+                <option value="Owner">Owner</option>
+                <option value="User">User</option>
+              </select>
+            
+            </div>
+            <div class=" col s12 center ">
+                <button class="btn-submit  btn">Sign Up</button>
+            </div>
+        </div>
+      </form>
+    </div>
+    <div class="col l3 m3 s12"></div>
+
+  </div>
+  <footer>
+      <div class="row footer">
+          <div class="col s12 center">
+              <p class="footer-paragraph">&copy; 2019 Scrumy App built by Ayooluwa Oyewo</p>
+          </div>
+      </div>
+  </footer>
+  </div>

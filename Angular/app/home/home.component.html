@@ -1,0 +1,149 @@
+<div class="container-fluid">
+  <!-- <h5 class="center">{{welcome}}</h5> -->
+  <div class="navbar-fixed">
+    <nav class="purple darken-4">
+      <div class="nav-wrapper">
+        <a routerLink="/home" routerLinkActive="active" class="brand-logo">Scrumy App</a>
+        <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a routerLink="/home" routerLinkActive="active">HOME</a></li>
+          <li><a routerLink="/home" routerLinkActive="active">ABOUT</a></li>
+          <li><a routerLink="/home" routerLinkActive="active">CONTACT US</a></li>
+          <li><a (click)="signUp()" class="nav-btn btn" routerLinkActive="active">Sign
+            Up</a></li> 
+          <li><a (click)="logIn()" class="nav-btn btn" routerLinkActive="active">Log In</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="sass.html">Sass</a></li>
+      <li><a href="badges.html">Components</a></li>
+      <li><a href="collapsible.html">Javascript</a></li>
+      <li><a href="mobile.html">Mobile</a></li>
+    </ul>
+  </div>
+
+  <header class="header">
+      <div class="row">
+            <div class="col s6">
+                <h1 class="heading-1">Team Task Management made easy.</h1>
+                <p class="paragraph">Scrumy app helps members of a team to manage their tasks 
+                    and get approval from their supervisor when tasks are completed. </p>
+            <a (click)="signUp()" class="nav-btn btn" routerLinkActive="active">GET STARTED HERE</a>
+
+            </div>
+            <div class="col l6 m6 s12">
+                <img class="responsive-img svg" src="../../assets/img/undraw_team_spirit_hrr4.svg" alt="teamwork" srcset="">
+            </div>
+      </div>
+        
+  </header>
+
+  <main class="main">
+      <div class="row">
+          <div class="col s12 center">
+              <h2 class="heading-2">Why Choose Scrumy App?</h2>
+              <p class="paragraph"> Some cool features that makes our app exceptional and the best for your team</p>
+          </div>
+      </div>
+      <div class="row card-row">
+          <div class="col l4 m4 s12">
+                <div class="card">
+                        <div class="card-image">
+                          <img class="card-svg responsive-img" src="../../assets/img/undraw_freelancer_b0my.svg"/>
+                          
+                        </div>
+                        <div class="center">
+                                <span class="card-title">Free to Use</span>
+
+                          </div> 
+                        <div class="card-content center">
+                          <p class="paragraph">It was made for all to use freely without any kind of requirements, just sign up and enjoy!</p>
+                        </div>
+                      </div>
+          </div>
+          <div class="col l4 m4 s12">
+                <div class="card">
+                        <div class="card-image">
+                          <img class="card-svg responsive-img" src="../../assets/img/undraw_note_list_etto.svg">
+                          
+                        </div>
+                        <div class="center">
+                                <span class="card-title">Simple and Flexible</span>
+
+                          </div>
+                        <div class="card-content center">
+                          <p class="paragraph">This app was built teams, it has as user friendly design that makes task management easier.</p>
+                        </div>
+                      </div>
+          </div>
+          <div class="col l4 m4 s12">
+                <div class="card">
+                        <div class="card-image center">
+                          <img class="card-svg responsive-img" src="../../assets/img/undraw_co-workers_ujs6.svg">
+                          
+                        </div>
+                        <div class="center">
+                                <span class="card-title">Optimum task management</span>
+
+                          </div>
+                        <div class="card-content center">
+                          <p class="paragraph">Team leaders have access to team detail and task which helps them efficiently manage the team.</p>
+                        </div>
+                      </div>
+          </div>
+
+      </div>
+
+      <div class="row content">
+            
+                    
+                    <div class="col l6 ">
+                        <img class="svg responsive-img" src="../../assets/img/undraw_scrum_board_cesn.svg" alt="teamwork" srcset="">
+                    </div>
+                    <div class="col s6 m6 s12">
+                            <h1 class="heading-1">Easily control and manage team task</h1>
+                            <p class="paragraph ">To control and manage your team it is important to know how they work and 
+                                how productive they are on tasks assigned to them. </p>
+            
+                        </div>
+             
+      </div>
+
+      <div class="row content">
+            
+                    
+            
+            <div class="col s6 ">
+                    <h1 class="heading-1">Team Collaboration has never been easier</h1>
+                    <p class="paragraph ">Now team members can collaborate on task, by working together and receiving assistance from team members </p>
+    
+                </div>
+                <div class="col l6 m6 s12">
+                        <img class="svg responsive-img" src="../../assets/img/undraw_hire_te5y.svg" alt="teamwork" srcset="">
+                    </div>
+     
+</div>
+
+
+<div class="row start ">
+        <h3 class="heading-3 center"> Want to enjoy all that Scrumy App has to offer??</h3>
+
+    <div class="col s12 center ">
+            <a (click)="signUp()" class="nav-btn-1 btn" routerLinkActive="active">GET STARTED TODAY</a>
+    </div>
+</div>
+
+
+  </main>
+
+  <footer>
+      <div class="row footer">
+          <div class="col s12 center">
+              <p class="footer-paragraph">&copy; 2019 Scrumy App built by Ayooluwa Oyewo</p>
+          </div>
+      </div>
+  </footer>
+
+</div>

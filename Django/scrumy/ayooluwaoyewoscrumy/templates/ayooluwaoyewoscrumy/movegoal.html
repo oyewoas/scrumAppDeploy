@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Goals Details</title>
+</head>
+
+<body>
+    <div class="logout">
+            <a href="{% url 'ayooluwaoyewoscrumy:logout'%}">Click here to Logout</a>
+
+    </div>
+    <h4> Currently Logged in as {{currentuser}} - <span class="group">{{group}}</span></h4>
+    <div class="goaldetail">
+        <h2>GOAL DETAILS</h2>
+        <p>Goal ID: {{goal.goal_id}}</p>
+        <p>Goal Name: {{goal}}</p>
+        <p>Goal Status: {{goal.goal_status}}</p>
+
+    </div>
+
+
+    {% if form.errors %}
+    <p class="errormessage">
+        <strong> All Fields are requireds, please try again.</strong>
+    </p>
+    {% endif %}
+
+    <div class="movegoal-form">
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <legend>Move Goal Form</legend>
+            {{ form.as_p }}
+            <div class="movegoal-btn">
+                <button type="submit">Move Goal</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
+
+
+<style lang="">
+    .goaldetail {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .movegoal-form {
+        text-align: center;
+        padding: 30px;
+    }
+
+    .errormessage {
+        color: red;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 14px;
+    }
+
+    .movegoal-btn {
+        text-align: center;
+    }
+
+    .forminp {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    legend {
+        margin-bottom: 40px;
+        font-size: 40px;
+        color: #4CAF50;
+    }
+    .logout {
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .logout a {
+        text-decoration: none;
+        padding: 10px 30px;
+        background-color:  rgb(18, 70, 20);
+        color: white;
+    }
+
+    /* Full-width inputs */
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    select {
+        width: 400px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .helptext {
+        display: block;
+        font-size: 12px;
+        color: gray;
+    }
+
+    label {
+        font-size: 16px;
+        font-weight: 400;
+        display: block;
+    }
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 400px;
+    }
+    .group{
+        color: #4CAF50;
+    }
+</style>

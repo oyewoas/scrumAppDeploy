@@ -1,0 +1,96 @@
+<div class="login">
+        <a href="{% url 'ayooluwaoyewoscrumy:login'%}">Click here to login</a>
+
+</div>
+
+{% if form.errors %}
+<p class="errormessage">
+    <strong> All fields are required, please try again.</strong>
+</p>
+{% endif %}
+
+<div class="signin-form">
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <legend>Sign Up Form</legend>
+            {{ form.as_p }}
+        <div class="signin-btn">
+            <button type="submit">Sign Up</button>
+        </div>
+    </form>
+</div>
+
+<style lang="">
+    .signin-form {
+        text-align: center;
+        padding: 30px;
+    }
+    .login {
+        margin-top: 30px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .login a {
+        text-decoration: none;
+        padding: 10px 30px;
+        background-color: rgb(18, 70, 20);
+        color: white;
+    }
+
+    .errormessage {
+        color: red;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 14px;
+    }
+
+    .signin-btn {
+        text-align: center;
+    }
+
+    .forminp {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    legend {
+        margin-bottom: 40px;
+        font-size: 40px;
+        color: #4CAF50;
+    }
+
+    /* Full-width inputs */
+    input[type=text],
+    input[type=password], 
+    input[type=email] {
+        width: 400px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    .helptext{ 
+        display: block;
+        font-size: 12px;
+        color: gray;
+    }
+    label {
+        font-size: 16px;
+        font-weight: 400;
+        display: block;
+    }
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 400px;
+    }
+</style>

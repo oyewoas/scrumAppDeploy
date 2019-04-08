@@ -1,0 +1,102 @@
+
+
+<!-- {% if form.errors %}<p><strong>{{ error|escape }}</strong></p>{% endif %} -->
+
+{% if form.errors %}
+<p class="errormessage">
+    <strong> The Username OR Password is incorrect, please try again.</strong>
+</p>
+{% endif %}
+
+<div class="signin-form">
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <legend>Sign In Form</legend>
+        <div class="forminp">
+            <label for="username">Username</label><br>
+            <input type="text" name="username" id="username">
+        </div>
+        <div class="forminp">
+            <label for="username">Password</label><br>
+            <input type="password" name="password" id="password">
+        </div>
+
+
+        <div class="signin-btn">
+            <button type="submit">Sign In</button>
+        </div>
+    </form>
+</div>
+<div class="signup">
+        <a href="{% url 'ayooluwaoyewoscrumyindex:index' %}">Sign Up Here </a>
+        
+        </div>
+        
+<style lang="">
+    .signin-form {
+        text-align: center;
+        padding: 30px;
+    }
+    .signup {
+        margin-top: 20px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .signup a {
+        text-decoration: none;
+        padding: 10px 30px;
+        background-color: rgb(18, 70, 20);
+        color: white;
+    }
+
+    .errormessage {
+        color: red;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 14px;
+    }
+
+    .signin-btn {
+        text-align: center;
+    }
+
+    .forminp {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    legend {
+        margin-bottom: 40px;
+        font-size: 40px;
+        color: #4CAF50;
+    }
+
+    /* Full-width inputs */
+    input[type=text],
+    input[type=password] {
+        width: 400px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    label {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 400px;
+    }
+</style>

@@ -1,0 +1,156 @@
+.table{
+    width: 100%;
+    border: 1px solid gray;
+    background-color: #4a14ac;
+    margin-top: 80px;
+    display: table;
+    table-layout: fixed;
+    word-wrap: break-word;
+    border-collapse: collapse;
+    
+    
+}
+.top-box{
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid gray;
+    padding: 10px
+}
+
+.full-box{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid gray;
+    padding: 10px
+}
+
+.reg-box{
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid gray;
+    padding: 10px
+    
+}
+.table-row{
+    display: table-row;
+}
+.table-row div{
+    color: white
+}
+td{
+    color: white;
+}
+th, tr{
+    color: white;
+}
+
+.para{font-weight: bold;
+    color: #4a14ac}
+
+.italic{
+    color: black
+}
+
+.headin-4{
+    margin-top: 70px;
+    color: black;
+}
+
+
+
+nav{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.nav-btn{
+    color: #4a14ac;
+    background-color: white;
+    border-radius: 30px;
+   padding: 0px 20px;
+    border: 1px solid #4a14ac;
+}
+
+.add-btn{
+    color:white ;
+    background-color:#4a14ac ;
+    border-radius: 30px;
+   padding: 10px 30px;
+   border: none;
+   margin-top: 20px;
+   cursor: pointer;
+}
+
+.addgoal-form{
+    margin-top: 150px;
+
+}
+
+.form{
+    padding-top: 50px;
+    padding-bottom: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.image{
+    
+    padding-left: 50px;
+    padding-right: 50px;
+
+    padding-top: 100px
+
+    
+}
+.btn-submit{
+    width: 100%;
+    color: white;
+    background-color: #4a14ac;
+    font-size: 16px;
+    padding: 0px 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.footer{
+    padding-top: 100px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+.footer-paragraph{
+    font-size: 16px;
+    color: #4a14ac;
+    padding: 10px 0px;
+    
+}
+.input-field{
+    font-size: 13px !important;
+    color: black !important;
+}
+
+input:focus {
+border-bottom : 3px  #4a14ac !important;
+padding-left: 5px;
+    
+    }
+    
+    
+.form .row{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+label{
+    color: gray;
+    font-size: 15px;
+    font-weight: 400;
+}
+.heading-4{
+    font-weight: bolder;
+    letter-spacing: 1px;
+    font-size: 30px;
+    color: #4a14ac;
+    padding: 30px; 
+}

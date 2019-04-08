@@ -1,0 +1,106 @@
+nav{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.heading-1{
+    font-weight: bolder;
+    font-size: 50px;
+    color: black;
+    padding-top: 60px
+}
+.start{
+    padding-top: 120px;
+    padding-bottom: 120px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: rgb(240, 240, 240);
+}
+
+.nav-btn-1{
+    color: white;
+    background-color: #4a14ac;
+    border-radius: 30px;
+   padding: 0px 50px;
+    border:none;
+}
+.heading-2{
+    font-weight: bolder;
+    font-size: 30px;
+    color: #4a14ac;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+.heading-3{
+    font-weight: bolder;
+    font-size: 25px;
+    color: black;
+}
+.card-svg{
+    /* padding: 10px; */
+    width: 200px;
+    height: 200px;
+    padding-top: 20px;
+    
+}
+.svg{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.card{
+    margin: 30px;
+}
+.card-row{
+    padding-left: 100px;
+    padding-right: 100px
+
+}
+.card-image{
+    margin-bottom: 20px;
+}
+.header{
+    padding:50px;
+}
+.content{
+    padding:50px;
+}
+
+.footer{
+    padding-top: 100px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+.card-title{
+    font-weight: bolder;
+    color: black;
+    font-size: 19px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+}
+.brand-logo{
+    color:white;
+    font-size: 30px;
+    font-weight: bolder;
+    padding-left: 5px;
+}
+.paragraph{
+    font-size: 16px;
+    color: gray;
+    padding: 10px 0px;
+    
+}
+.footer-paragraph{
+    font-size: 16px;
+    color: #4a14ac;
+    padding: 10px 0px;
+    
+}
+.nav-btn{
+    color: #4a14ac;
+    background-color: white;
+    border-radius: 30px;
+   padding: 0px 20px;
+    border: 1px solid #4a14ac;
+}

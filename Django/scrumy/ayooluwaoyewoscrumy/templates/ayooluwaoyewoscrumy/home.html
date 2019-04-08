@@ -1,0 +1,269 @@
+
+<div class="logout">
+        <a href="{% url 'ayooluwaoyewoscrumy:logout'%}">Click here to Logout</a>
+
+</div>
+
+<h4> Currently Logged in as {{currentuser}} - <span class="group">{{group}}</span></h4>
+
+
+
+<table>
+    <colgroup span="5"></colgroup>
+    <tr>
+        <th>User</th>
+        <th colspan="1">Weekly Goals</th>
+        <th colspan="1">Daily Goals</th>
+        <th colspan="1">Verify Goals</th>
+        <th colspan="1">Done Goals</th>
+    </tr>
+
+    {% if user %}
+    {% for username in user %}
+    <tr>
+        <td rowspan="1">
+            <p class="username">{{username}}</p>
+        </td>
+        {% if weeklygoal %}
+        <td rowspan="1">
+            {%for scrumygoal in weeklygoal %}
+            {% if scrumygoal.user == username %}
+            <p class="eachgoal"><a href="{% url 'ayooluwaoyewoscrumy:movegoals' goal_id=scrumygoal.goal_id %}" > <i>Goal ID:</i> {{scrumygoal.goal_id}} &nbsp; &nbsp; <i>Goal Name:</i>
+                {{scrumygoal.goal_name}}</a></p>
+            {% endif %}
+            {% endfor %}
+
+        </td>
+        {% else %}
+        <td>There is No Goal</td>
+        {% endif %}
+
+        {% if dailygoal %}
+        <td rowspan="1">
+            {% for scrumygoal in dailygoal %}
+            {% if scrumygoal.user == username %}
+
+            <p class="eachgoal"><a href="{% url 'ayooluwaoyewoscrumy:movegoals' goal_id=scrumygoal.goal_id %}" > <i>Goal ID:</i> {{scrumygoal.goal_id}} &nbsp; &nbsp; <i>Goal Name:</i>
+                {{scrumygoal.goal_name}}</a></p>
+            {% endif %}
+            {% endfor %}
+
+        </td>
+        {% else %}
+        <td>There is No Goal</td>
+        {% endif %}
+
+        {% if verifygoal %}
+        <td rowspan="1">
+            {% for scrumygoal in verifygoal %}
+
+            {% if scrumygoal.user == username %}
+            <p class="eachgoal"><a href="{% url 'ayooluwaoyewoscrumy:movegoals' goal_id=scrumygoal.goal_id %}" > <i>Goal ID:</i> {{scrumygoal.goal_id}} &nbsp; &nbsp; <i>Goal Name:</i>
+                {{scrumygoal.goal_name}}</a></p>
+            {% endif %}
+            {% endfor %}
+
+        </td>
+        {% else %}
+        <td>There is No Goal</td>
+        {% endif %}
+
+        {% if donegoal %}
+        <td rowspan="1">
+            {% for scrumygoal in donegoal %}
+
+            {% if scrumygoal.user == username %}
+            <p class="eachgoal"><a href="{% url 'ayooluwaoyewoscrumy:movegoals' goal_id=scrumygoal.goal_id %}" > <i>Goal ID:</i> {{scrumygoal.goal_id}} &nbsp; &nbsp; <i>Goal Name:</i>
+                {{scrumygoal.goal_name}}</a></p>
+            {% endif %}
+            {% endfor %}
+
+        </td>
+        {% else %}
+        <td>There is No Goal</td>
+        {% endif %}
+
+
+
+
+
+
+    </tr>
+    {% endfor %}
+    {% endif %}
+
+
+
+
+</table>
+
+
+<div class="addgoals">
+    {% if form.errors %}
+    <p class="errormessage">
+        <strong> All Fields are requireds, please try again.</strong>
+    </p>
+    {% endif %}
+
+    <div class="addgoal-form">
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <legend>Add Goal Form</legend>
+            {{ form.as_p }}
+            <div class="addgoal-btn">
+                <button type="submit">Add Goal</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div class="signup">
+    <a href="{% url 'ayooluwaoyewoscrumy:index' %}">Sign Up Here!</a>
+
+</div>
+<style>
+    .username {
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    i {
+        color: blue;
+        font-size: 16px;
+    }
+
+    table {
+        border: 1px solid #333;
+        margin: 0 auto;
+    }
+
+    td {
+        padding: 5px;
+        border: 1px solid #333;
+        margin: 0 auto;
+    }
+
+    .eachgoal {
+        padding-left: 5px;
+        padding-right: 5px;
+        color: #4CAF50;
+    }
+    .eachgoal a {
+        text-decoration: none;
+        color: #4CAF50;
+    }
+    .eachgoal a:hover{
+        opacity: 0.6;
+    }
+    th {
+        background-color: #333;
+        color: #fff;
+    }
+    .logout {
+        margin: 0 auto;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .logout a {
+        text-decoration: none;
+        padding: 10px 30px;
+        background-color: rgb(18, 70, 20);
+        color: white;
+    }
+    .addgoals {
+        margin: 0 auto;
+        margin-top: 60px;
+        text-align: center;
+    }
+
+    .addgoals a {
+        text-decoration: none;
+        padding: 10px 30px;
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .signup {
+        margin: 0 auto;
+        margin-top: 60px;
+        margin-bottom: 120px;
+        text-align: center;
+    }
+
+    .signup a {
+        text-decoration: none;
+        padding: 10px 30px;
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .addgoal-form {
+        text-align: center;
+        padding: 30px;
+    }
+
+    .errormessage {
+        color: red;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 14px;
+    }
+
+    .addgoal-btn {
+        text-align: center;
+    }
+
+    .forminp {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    legend {
+        margin-bottom: 40px;
+        font-size: 40px;
+        color: #4CAF50;
+    }
+
+    /* Full-width inputs */
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    select {
+        width: 400px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .helptext {
+        display: block;
+        font-size: 12px;
+        color: gray;
+    }
+
+    label {
+        font-size: 16px;
+        font-weight: 400;
+        display: block;
+    }
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 400px;
+    }
+    .group{
+        color: #4CAF50;
+    }
+</style>

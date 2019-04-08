@@ -1,0 +1,82 @@
+
+
+{% if form.errors %}
+<p class="errormessage">
+    <strong> All Fields are requireds, please try again.</strong>
+</p>
+{% endif %}
+
+<div class="addgoal-form">
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <legend>Add Goal Form</legend>
+            {{ form.as_p }}
+        <div class="addgoal-btn">
+            <button type="submit">Add Goal</button>
+        </div>
+    </form>
+</div>
+
+<style lang="">
+    .addgoal-form {
+        text-align: center;
+        padding: 30px;
+    }
+
+    .errormessage {
+        color: red;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 14px;
+    }
+
+    .addgoal-btn {
+        text-align: center;
+    }
+
+    .forminp {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    legend {
+        margin-bottom: 40px;
+        font-size: 40px;
+        color: #4CAF50;
+    }
+
+    /* Full-width inputs */
+    input[type=text],
+    input[type=password], 
+    input[type=email],
+    select {
+        width: 400px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    .helptext{ 
+        display: block;
+        font-size: 12px;
+        color: gray;
+    }
+    label {
+        font-size: 16px;
+        font-weight: 400;
+        display: block;
+    }
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 400px;
+    }
+</style>
